@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".activities.CellEditorActivity">
+
+    <TextView
+        android:id="@+id/editor_title"
+        style="@style/EditorTitleText"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/supercell"
+        android:text="@string/cell_editor_title"
+        android:textColor="@color/cell_default_text" />
+
+    <TextView
+        android:id="@+id/total_cells_count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editor_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/board_background"
+        android:fontFamily="@font/supercell"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Всего ячеек: 0 / 48" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_panel"
+        android:layout_below="@id/total_cells_count_text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CellEditorCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_challenge_star"
+                        app:tint="@color/cell_challenge_background" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/supercell"
+                        android:text="@string/challenges"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/challenge_minus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_remove" />
+
+                    <TextView
+                        android:id="@+id/challenge_count"
+                        style="@style/EditorCountText"
+                        android:fontFamily="@font/supercell"
+                        android:text="0"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/challenge_plus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_add" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Карточка для Атак -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CellEditorCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_attack_sword"
+                        app:tint="@color/cell_attack_background" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/supercell"
+                        android:text="@string/attacks"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/attack_minus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_remove" />
+
+                    <TextView
+                        android:id="@+id/attack_count"
+                        style="@style/EditorCountText"
+                        android:fontFamily="@font/supercell"
+                        android:text="0"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/attack_plus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_add" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Карточка для Телепорта +5 -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CellEditorCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_teleport_forward"
+                        app:tint="@color/cell_teleport_forward_background" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/supercell"
+                        android:text="@string/teleport_forward_5"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_f5_minus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_remove" />
+
+                    <TextView
+                        android:id="@+id/tele_f5_count"
+                        style="@style/EditorCountText"
+                        android:fontFamily="@font/supercell"
+                        android:text="0"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_f5_plus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_add" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Карточка для Телепорта +7 -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CellEditorCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_teleport_forward"
+                        app:tint="@color/cell_teleport_forward_background" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/supercell"
+                        android:text="@string/teleport_forward_7"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_f7_minus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_remove" />
+
+                    <TextView
+                        android:id="@+id/tele_f7_count"
+                        style="@style/EditorCountText"
+                        android:fontFamily="@font/supercell"
+                        android:text="0"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_f7_plus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_add" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Карточка для Телепорта -5 -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CellEditorCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_teleport_backward"
+                        app:tint="@color/cell_teleport_backward_background" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/supercell"
+                        android:text="@string/teleport_backward_5"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_b5_minus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_remove" />
+
+                    <TextView
+                        android:id="@+id/tele_b5_count"
+                        style="@style/EditorCountText"
+                        android:fontFamily="@font/supercell"
+                        android:text="0"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_b5_plus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_add" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Карточка для Телепорта -7 -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CellEditorCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_teleport_backward"
+                        app:tint="@color/cell_teleport_backward_background" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/supercell"
+                        android:text="@string/teleport_backward_7"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_b7_minus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_remove" />
+
+                    <TextView
+                        android:id="@+id/tele_b7_count"
+                        style="@style/EditorCountText"
+                        android:fontFamily="@font/supercell"
+                        android:text="0"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tele_b7_plus"
+                        style="@style/EditorControlButton"
+                        app:icon="@drawable/ic_add" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/randomize_button"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/supercell"
+            android:text="@string/randomize"
+            android:textColor="@color/cell_empty_background"
+            app:strokeColor="?attr/colorPrimaryContainer" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start_game_button_cell_editor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/supercell"
+            android:text="@string/next"
+            app:backgroundTint="@color/team_1_color" />
+    </LinearLayout>
+
+</RelativeLayout>

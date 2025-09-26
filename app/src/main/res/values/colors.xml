@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gradient_start">#4A6DA7</color>
+    <color name="gradient_end">#2C3E50</color>
+    <color name="button_primary_color">#3F51B5</color>
+    <color name="colorPrimaryContainer">#D1C4E9</color>
+    <color name="text_secondary">#757575</color>
+    <color name="team_1_color">#E53935</color>
+    <color name="team_2_color">#1E88E5</color>
+    <color name="team_3_color">#43A047</color>
+    <color name="team_4_color">#FDD835</color>
+    <color name="team_5_color">#8E24AA</color>
+    <color name="cell_empty_background">#E0E0E0</color>
+    <color name="cell_challenge_background">#FFC107</color>
+    <color name="cell_attack_background">#F44336</color>
+    <color name="cell_teleport_forward_background">#4CAF50</color>
+    <color name="cell_teleport_backward_background">#FF9800</color>
+    <color name="cell_default_text">#212121</color>
+</resources>

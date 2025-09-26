@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Кинь-Двинь\nбродилка</string>
+    <string name="win_title">Победа!</string>
+    <string name="win_message">\"%1$s\" выигрывает этот матч!!!</string>
+    <string name="play_again">Играть снова</string>
+    <string name="exit_to_menu">Выйти в меню</string>
+    <string name="turn_prefix">Ход команды: %1$s</string>
+    <string name="error_loading_game_data">Ошибка загрузки данных игры. Возврат в меню.</string>
+    <string name="roll_dice">Бросить кость</string>
+    <string name="team_editor_title">Редактор команд</string>
+    <string name="add_team">Добавить</string>
+    <string name="shuffle">Перемешать</string>
+    <string name="challenge_editor_title">Редактор челленджей</string>
+    <string name="next">Начать игру</string>
+    <string name="add_new_challenge">Добавить новый челлендж</string>
+    <string name="cell_editor_title">Настройка поля</string>
+    <string name="total_special_cells">Всего ячеек: %1$d / %2$d</string>
+    <string name="challenges">Челленджи</string>
+    <string name="attacks">Атаки</string>
+    <string name="teleport_forward_5">Телепорт (+5)</string>
+    <string name="teleport_forward_7">Телепорт (+7)</string>
+    <string name="teleport_backward_5">Телепорт (-5)</string>
+    <string name="teleport_backward_7">Телепорт (-7)</string>
+    <string name="randomize">Случайно</string>
+    <string name="main_subtitle">Веселая игра для компании</string>
+    <string name="start_game">Играть</string>
+    <string name="team_setup">Настроить команды</string>
+    <string name="max_teams_reached">Максимум %1$d команд</string>
+    <string name="player_position_text">Ячейка: %1$d</string>
+    <!-- Строки, исправляющие ошибку -->
+    <string name="players_title">Игроки</string>
+    <string name="roll_dice_button">Бросок</string>
+</resources>

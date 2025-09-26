@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cell_diameter">64dp</dimen>
+    <dimen name="pawn_size_small">20dp</dimen>
+    <dimen name="pawn_size_large">48dp</dimen>
+</resources>

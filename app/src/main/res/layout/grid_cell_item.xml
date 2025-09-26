@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Используем наш новый SquareCardView вместо обычного -->
+<com.example.kindvinapp.views.SquareCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cell_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:cardBackgroundColor="@color/cell_empty_background"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/cell_number_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/cell_default_text"
+            android:textSize="10sp"
+            tools:ignore="SmallSp"
+            tools:text="50" />
+
+        <ImageView
+            android:id="@+id/special_cell_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:tint="@color/cell_default_text"
+            tools:src="@drawable/ic_challenge_star"
+            tools:visibility="visible" />
+
+        <GridLayout
+            android:id="@+id/player_tokens_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <ImageView
+                android:id="@+id/pawn_slot_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:padding="3dp"
+                android:visibility="gone"
+                tools:src="@drawable/ic_player_pawn"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/pawn_slot_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:padding="3dp"
+                android:visibility="gone"
+                tools:src="@drawable/ic_player_pawn"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/pawn_slot_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:padding="3dp"
+                android:visibility="gone"
+                tools:src="@drawable/ic_player_pawn"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/pawn_slot_4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:padding="3dp"
+                android:visibility="gone"
+                tools:src="@drawable/ic_player_pawn"
+                tools:visibility="visible" />
+
+        </GridLayout>
+
+    </FrameLayout>
+
+</com.example.kindvinapp.views.SquareCardView>
+
